@@ -60,8 +60,36 @@ async function run() {
         // await client.close
     }
 }
-  run().catch(console.dir)
+  run().catch(console.dir);
+  app.get('/', (req, res)=> {
+      res.send("running genius server", port)
+  })
+  app.get("/hello", (req, res)=>{
+      res.send('hello updated here')
+  })
+
 app.listen(port, ()=>{
     console.log('Running Genius server', port);
 })
 
+/* 
+1. heroku account open
+2.heroku software install
+
+every project
+1. git init 
+2. .gitignore (node_module, .env)
+3.push everything to git
+4.make sure you have thias script: "start":"node inedex.js",
+5. make sure ": put process.env.PORT in front of your port number
+6. heroku login
+7. heroku create (only one time for a project)
+8. command : git push heroku main
+
+__------------
+1. save everything check locally
+1.git add,git commit-m, git push
+2.git push heroku main
+
+
+*/
